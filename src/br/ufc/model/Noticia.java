@@ -11,33 +11,30 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
-@Entity(name="classificado")
-public class Classificado {
+@Entity(name="noticia")
+public class Noticia {
 
 	@Id
 	@Column(nullable=false)
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long id;
-	
-	//@NotNull(message="{classificado.titulo.vazio}")
-	//@Size(min=5,message="{classificado.titulo.min}")
 	private String titulo;
-	
+	private String subtitulo;
 	private String texto;
-	private double preco;
-	private String telefone;
 	
-	@Column(name="melhor_oferta")
-	private String melhorOferta;
+	@Column(name="data_noticia")
+	private Date dataNoticia;
 	
-	@Column(name="data_oferta")
-	private Date dataOferta;
-
 	@ManyToOne(optional=false, cascade=CascadeType.ALL)
 	@JoinColumn(name="id_autor",
 				referencedColumnName="id", unique=false)
-	private Usuario autor;
+	private Usuario idAutor;
 		
+	@ManyToOne(optional=false, cascade=CascadeType.ALL)
+	@JoinColumn(name="id_secao",
+				referencedColumnName="id", unique=false)
+	private Secao idSecao;
+	
 	public Long getId() {
 		return id;
 	}
@@ -50,53 +47,45 @@ public class Classificado {
 	public void setTitulo(String titulo) {
 		this.titulo = titulo;
 	}
+	public String getSubtitulo() {
+		return subtitulo;
+	}
+	public void setSubtitulo(String subtitulo) {
+		this.subtitulo = subtitulo;
+	}
 	public String getTexto() {
 		return texto;
 	}
 	public void setTexto(String texto) {
 		this.texto = texto;
 	}
-	public double getPreco() {
-		return preco;
+	public Date getDataNoticia() {
+		return dataNoticia;
 	}
-	public void setPreco(double preco) {
-		this.preco = preco;
+	public void setDataNoticia(Date dataNoticia) {
+		this.dataNoticia = dataNoticia;
 	}
-	public String getTelefone() {
-		return telefone;
+	public Usuario getIdAutor() {
+		return idAutor;
 	}
-	public void setTelefone(String telefone) {
-		this.telefone = telefone;
+	public void setIdAutor(Usuario idAutor) {
+		this.idAutor = idAutor;
 	}
-	public String getMelhorOferta() {
-		return melhorOferta;
+	public Secao getIdSecao() {
+		return idSecao;
 	}
-	public void setMelhorOferta(String melhorOferta) {
-		this.melhorOferta = melhorOferta;
-	}
-	public Date getDataOferta() {
-		return dataOferta;
-	}
-	public void setDataOferta(Date dataOferta) {
-		this.dataOferta = dataOferta;
-	}
-			
-	public Usuario getAutor() {
-		return autor;
-	}
-	public void setAutor(Usuario autor) {
-		this.autor = autor;
+	public void setIdSecao(Secao idSecao) {
+		this.idSecao = idSecao;
 	}
 	
 	@Override
 	public boolean equals(Object obj) {
-		if(!(obj instanceof Classificado))
+		if(!(obj instanceof Noticia))
 			return false;
 		
-		Classificado ref = (Classificado)obj;
+		Noticia ref = (Noticia)obj;
 		if(ref.getId()==this.id)
 			return true;
 		return false;	
-	}
-		
+	}	
 }

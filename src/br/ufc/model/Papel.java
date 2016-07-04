@@ -25,9 +25,7 @@ public class Papel {
 	private String papel;
 	
 	@ManyToMany(mappedBy="papeis", fetch=FetchType.LAZY)
-	private List<Usuario> usuarios;
-	
-	
+	private List<Usuario> usuarios;	
 	
 	public Long getId() {
 		return id;

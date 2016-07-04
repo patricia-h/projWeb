@@ -21,6 +21,10 @@
 	
 	<a href="listarClassificado"> Listar Classificados </a> <br />
 	
+	<a href="inserirSecaoFormulario"> Inserir Seção</a> <br />
+	
+	<a href="listarSecao"> Listar Seção</a> <br />
+	
 	<a href="logout">Logout</a>
 </body>
 </html>

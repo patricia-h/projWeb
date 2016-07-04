@@ -44,6 +44,11 @@ public class Usuario {
 			   targetEntity=Classificado.class,
 			   fetch=FetchType.EAGER)
 	private List<Classificado> classificados;
+	
+	@OneToMany(mappedBy="idAutor",
+			   targetEntity=Noticia.class,
+			   fetch=FetchType.EAGER)
+	private List<Noticia> noticias;
 		
 	public Long getId() {
 		return id;
