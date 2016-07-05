@@ -1,15 +1,18 @@
 package br.ufc.model;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 @Entity(name="noticia")
 public class Noticia {
@@ -34,6 +37,11 @@ public class Noticia {
 	@JoinColumn(name="id_secao",
 				referencedColumnName="id", unique=false)
 	private Secao idSecao;
+	
+	@OneToMany(mappedBy="idNoticia",
+			   targetEntity=Comentario.class,
+			   fetch=FetchType.EAGER)
+	private List<Comentario> comentarios;
 	
 	public Long getId() {
 		return id;
