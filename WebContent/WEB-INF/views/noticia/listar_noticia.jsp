@@ -5,22 +5,25 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Listar Classificado</title>
+<title>Listar Noticia</title>
 </head>
 <body>
 
 Usuario logado: ${usuario_logado.nome}
+<br />
+<a href="menu">HOME</a>
+<br />
 <table border="1">
-	<c:forEach var="c" items="${classificados}">
+	<c:forEach var="n" items="${noticias}">
 	<tr>
-		<td>${c.id}</td>
-		<td>${c.titulo}</td>
-		<td><a href="alterarClassificadoFormulario?id=${c.id}">ALTERAR</a></td>
-		<td><a href="apagarClassificado?id=${c.id}">APAGAR</a></td>
+		<td>${n.id}</td>
+		<td>${n.titulo}</td>
+		<td><a href="alterarNoticiaFormulario?id=${n.id}">ALTERAR</a></td>
+		<td><a href="apagarNoticia?id=${n.id}">APAGAR</a></td>
 	</tr>
 	</c:forEach>
 </table>
-
+	
 </body>
 </html>
 

@@ -19,7 +19,7 @@ public class Comentario {
 	
 	private String texto;
 	
-	@ManyToOne(optional=false, cascade=CascadeType.ALL)
+	@ManyToOne(cascade=CascadeType.ALL)
 	@JoinColumn(name="id_noticia",
 				referencedColumnName="id", unique=false)
 	private Noticia idNoticia;

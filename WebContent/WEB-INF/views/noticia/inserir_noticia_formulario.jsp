@@ -1,3 +1,4 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -9,19 +10,20 @@
 </head>
 <body>
 	<h2>Menu, Bem-vindo ${usuario_logado.nome}</h2>
+	<h2><a href="menu">HOME</a></h2>
 	
 	<form action="inserirNoticia" method="post" enctype="multipart/form-data">
 		Titulo: <input type="text" name="titulo" /><br />
 		Subtitulo: <input type="text" name="subtitulo"/><br />
 		Texto: <input type="text" name="texto"/><br />
 		Data: <input type="text" name="dataNoticia"/><br />
-		<input type="hidden" name="usuario_id" value="${usuario_logado.id}"/><br />
-		
+								
 		<select name="secoes">
-			<c:forEach var="s" items="${secoes}">
-				<option value="${s.id}">${s.titulo}</option>
+		<c:forEach var="s" items="${secoes}">
+			<option value="${s.id}">${s.titulo}</option>
 			</c:forEach>
-		</select>	
+		</select>
+		<input type="hidden" name="usuario_id" value="${usuario_logado.id}"/><br />
 		
 		<input type="submit" value="ENVIAR" />				
 	</form>

@@ -7,6 +7,8 @@
 <title>Usuario Inserido</title>
 </head>
 <body>
+	<h2><a href="menu">HOME</a></h2>
+	<br />
 	<h2>Usuario inserido com sucesso.</h2>
 </body>
 </html>

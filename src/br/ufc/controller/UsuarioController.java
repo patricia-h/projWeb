@@ -55,8 +55,7 @@ public class UsuarioController {
 			return "usuario/inserir_usuario_formulario";
 		}
 		
-		//E agora?
-		
+	
 		List<Papel> p = new ArrayList<Papel>();
 		
 		p.add(this.pDAO.recuperar((long) Integer.parseInt(req.getParameter("papeis"))));

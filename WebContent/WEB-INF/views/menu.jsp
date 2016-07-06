@@ -7,7 +7,7 @@
 <title>Menu</title>
 </head>
 <body>
-	<h2>Menu, Bem-vindo ${usuario_logado.nome} </h2>
+	<h2>Menu, Bem-vindo(a) ${usuario_logado.nome} </h2>
 
 	<a href="inserirUsuarioFormulario"> Cadastrar Usuario </a> <br />
 
@@ -25,7 +25,7 @@
 	
 	<a href="listarSecao"> Listar Seção</a> <br />
 	
-	<a href="inserirNoticia"> Cadastrar Notícia </a> <br />
+	<a href="inserirNoticiaFormulario"> Cadastrar Notícia </a> <br />
 	
 	<a href="listarNoticia"> Listar Notícia </a> <br />
 	

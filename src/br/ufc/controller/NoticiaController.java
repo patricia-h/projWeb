@@ -1,7 +1,9 @@
 package br.ufc.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +15,11 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import br.ufc.dao.NoticiaDAO;
+import br.ufc.dao.SecaoDAO;
+import br.ufc.dao.UsuarioDAO;
 import br.ufc.model.Noticia;
+import br.ufc.model.Secao;
+import br.ufc.model.Usuario;
 
 @Transactional
 @Controller
@@ -23,19 +29,39 @@ public class NoticiaController {
 	@Qualifier(value="noticiaDAO")
 	private NoticiaDAO nDAO;
 	
+	@Autowired
+	@Qualifier(value="usuarioDAO")
+	private UsuarioDAO uDAO;
+	
+
+	@Autowired
+	@Qualifier(value="secaoDAO")
+	private SecaoDAO sDAO;
+	
 	@RequestMapping("/inserirNoticiaFormulario")
-	public String inserirNoticiaFormulario(){
+	public String inserirNoticiaFormulario(Model model){
+		List<Secao> secoes = sDAO.listar();
+		model.addAttribute("secoes", secoes);
 		return "noticia/inserir_noticia_formulario";
 	}	
 	
 	@RequestMapping("/inserirNoticia")
-	public String inserirNoticia(@Valid Noticia noticia,
-							   BindingResult result){
-	
+	public String inserirNoticia(Long usuario_id, @Valid Noticia noticia,
+								HttpServletRequest request, BindingResult result){
+		System.out.println("ola");
+		
 		if(result.hasFieldErrors("titulo")){
 			return "noticia/inserir_noticia_formulario";
 		}
 		
+		Usuario usuario = new Usuario(); 
+		usuario=(uDAO.recuperar(usuario_id));
+		noticia.setIdAutor(usuario);		
+		
+		Secao s = new Secao();
+		s=(this.sDAO.recuperar((long) Integer.parseInt(request.getParameter("secoes"))));
+		noticia.setIdSecao(s);
+					
 		this.nDAO.inserir(noticia);
 		
 		return "noticia/noticia_inserido_ok";

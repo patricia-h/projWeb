@@ -4,20 +4,22 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Alterar Classificado</title>
+<title>Alterar Noticia</title>
 </head>
 <body>
 
-<h2>Alterar Classificado</h2>
+<h2>Alterar Noticia</h2>
 
-<form action="alterarClassificado" method="post">
-	<input type="hidden" name="id" value="${classificado.id}" />
-	Titulo: <input type="text" name="titulo" value="${classificado.titulo}" /><br />
-	Texto: <input type="text" name="texto" value="${classificado.texto}"/><br />
-	Preço: <input type="text" name="preco" value="${classificado.preco}"><br />
-	Telefone: <input type="text" name="telefone" value="${classificado.telefone}"><br />
-	Melhor Oferta: <input type="text" name="melhorOferta" value="${classificado.melhorOferta}"><br />
-	Data Oferta: <input type="text" name="dataOferta" value="${classificado.dataOferta}"><br />
+<a href="menu">HOME</a>
+<br />
+<form action="alterarNoticia" method="post">
+	<input type="hidden" name="id" value="${noticia.id}" />
+	Titulo: <input type="text" name="titulo" value="${noticia.titulo}" /><br />
+	Subtitulo: <input type="text" name="subtitulo" value="${noticia.subtitulo}"/><br />
+	Texto: <input type="text" name="texto" value="${noticia.texto}"><br />
+	Data: <input type="text" name="dataNoticia" value="${noticia.dataNoticia}"><br />
+	<input type="hidden" name="idAutor" value="${noticia.idAutor}"><br />
+	<input type="hidden" name="idSecao" value="${noticia.idSecao}"><br />
 	
 	<input type="submit" value="ALTERAR" />
 </form>

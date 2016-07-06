@@ -10,7 +10,7 @@
 	<h2>Efetuar Login</h2>
 	<form action="login" method="post">
 		Login: <input type="text" name="login" /> <br />
-		Senha: <input type="text" name="senha" /> <br />
+		Senha: <input type="password" name="senha" /> <br />
 		<input type="submit" value="ENVIAR" /> 
 	</form>
 </body>

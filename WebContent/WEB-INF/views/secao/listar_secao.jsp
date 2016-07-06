@@ -10,6 +10,9 @@
 <body>
 
 Usuario logado: ${usuario_logado.nome}
+
+<h2><a href="menu">HOME</a></h2>
+<br />
 <table border="1">
 	<c:forEach var="s" items="${secoes}">
 	<tr>

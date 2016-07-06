@@ -9,8 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
+
 
 @Entity(name="papel")
 public class Papel {
@@ -20,8 +19,8 @@ public class Papel {
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private Long id;
 
-	@NotNull(message="{papel.nome.vazio}")
-	@Size(min=5,message="{papel.nome.min}")
+	//@NotNull(message="{papel.nome.vazio}")
+	//@Size(min=5,message="{papel.nome.min}")
 	private String papel;
 	
 	@ManyToMany(mappedBy="papeis", fetch=FetchType.LAZY)
@@ -53,7 +52,5 @@ public class Papel {
 			return true;
 		return false;	
 	}
-	
-	
-	
+		
 }

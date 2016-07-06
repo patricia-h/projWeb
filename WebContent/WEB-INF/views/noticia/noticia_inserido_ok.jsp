@@ -4,9 +4,11 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Classificado Inserido</title>
+<title>Noticia Inserida</title>
 </head>
 <body>
-	<h2>Classificado inserido com sucesso.</h2>
+	<h2><a href="menu">HOME</a><h2>
+	<br />
+	Noticia inserida com sucesso.</h2>
 </body>
 </html>

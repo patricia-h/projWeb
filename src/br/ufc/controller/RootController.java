@@ -10,4 +10,8 @@ public class RootController {
 		return "home";
 	}
 	
+	@RequestMapping("menu")
+	public String menu() {
+		return "menu";
+	}
 }
