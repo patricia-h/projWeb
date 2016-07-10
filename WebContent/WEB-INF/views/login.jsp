@@ -4,10 +4,14 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Seção Inserida</title>
+
+<title>Home</title>
 </head>
 <body>
-	<h2><a href="menu">HOME</a></h2>
-	<h2>Seção inserida com sucesso.</h2>
+	
+	<a href="loginFormulario"> Efetuar Login</a> <br />
+	<a href="inserirUsuarioFormulario"> Cadastre-se</a>
+
 </body>
 </html>
+

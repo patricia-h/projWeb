@@ -1,6 +1,6 @@
 package br.ufc.controller;
 
-import java.util.ArrayList;
+
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -84,15 +84,21 @@ public class NoticiaController {
 	}
 	
 	@RequestMapping("/alterarNoticiaFormulario")
+	
 	public String alterarNoticiaFormulario(Long id, Model model){
-		
 		Noticia noticia = this.nDAO.recuperar(id);
 		model.addAttribute("noticia", noticia);
 		return "noticia/alterar_noticia_formulario";
 	}
 	
 	@RequestMapping("/alterarNoticia")
-	public String alterarNoticia(Noticia noticia){
+	public String alterarNoticia(Noticia noticia, Long autor, Long secao){
+		Usuario u = uDAO.recuperar(autor);
+		Secao s = sDAO.recuperar(secao);
+		noticia.setIdAutor(u);
+		noticia.setIdSecao(s);
+		
+		//certo? -Sim.
 		
 		this.nDAO.alterar(noticia);
 		return "redirect:listarNoticia";

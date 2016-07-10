@@ -7,8 +7,8 @@
 <title>Noticia Inserida</title>
 </head>
 <body>
-	<h2><a href="menu">HOME</a><h2>
+	<h2><a href="menu">HOME</a></h2>
 	<br />
-	Noticia inserida com sucesso.</h2>
+	Noticia inserida com sucesso.
 </body>
 </html>

@@ -9,6 +9,8 @@
 </head>
 <body>
 	<h2>Menu, Bem-vindo ${usuario_logado.nome}</h2>
+	<h2><a href="menu">HOME</a></h2>
+	<br />
 	
 	<form action="inserirClassificado" method="post" enctype="multipart/form-data">
 		Titulo: <input type="text" name="titulo" /><br />

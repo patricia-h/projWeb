@@ -11,7 +11,7 @@
 
 Usuario logado: ${usuario_logado.nome}
 <br />
-<a href="menu">HOME</a>
+<a href="home">HOME</a>
 <br />
 <table border="1">
 	<c:forEach var="n" items="${noticias}">

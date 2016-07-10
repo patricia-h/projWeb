@@ -8,12 +8,11 @@
 </head>
 <body>
 
-<h2><a href="menu">HOME</a><h2>
+<h2><a href="menu">HOME</a></h2>
 <br />
 <form action="alterarPapel" method="post">
 	<input type="hidden" name="id" value="${papel.id}" />
-	Nome: <input type="text" name="nome" value="${papel.papel}" /><br />
-	
+	Papel: <input type="text" name="papel" value="${papel.papel}" /><br />	
 	<input type="submit" value="ALTERAR" />
 </form>
 

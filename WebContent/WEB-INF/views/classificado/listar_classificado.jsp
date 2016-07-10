@@ -10,6 +10,8 @@
 <body>
 
 Usuario logado: ${usuario_logado.nome}
+<h2><a href="home">HOME</a></h2>
+<br />
 <table border="1">
 	<c:forEach var="c" items="${classificados}">
 	<tr>
