@@ -4,14 +4,9 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Noticia Inserida</title>
+<title>Comentario Inserido</title>
 </head>
 <body>
-<div>
-	<h2><a href="home">HOME</a></h2>
-	<br />
-	Noticia inserida com sucesso.
-	
-</div>	
+	<h2>Comentario inserido com sucesso.</h2>
 </body>
 </html>

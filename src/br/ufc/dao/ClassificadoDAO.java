@@ -26,7 +26,7 @@ public class ClassificadoDAO {
 	}
 
 	public Classificado recuperar(Long id) {
-		return manager.find(Classificado.class, 1);
+		return manager.find(Classificado.class, id);
 	}
 
 	public void apagar(Long id) {

@@ -5,25 +5,53 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="./resources/css/style.css"/>
 <title>Listar Noticia</title>
 </head>
-<body>
 
-Usuario logado: ${usuario_logado.nome}
-<br />
-<a href="home">HOME</a>
-<br />
-<table border="1">
-	<c:forEach var="n" items="${noticias}">
-	<tr>
-		<td>${n.id}</td>
-		<td>${n.titulo}</td>
-		<td><a href="alterarNoticiaFormulario?id=${n.id}">ALTERAR</a></td>
-		<td><a href="apagarNoticia?id=${n.id}">APAGAR</a></td>
-	</tr>
-	</c:forEach>
-</table>
-	
+ <div id="menu">
+   <div>
+		<img src="./resources/imagens/capa.png" width="330" height="120" 
+		alt="logo de 220 por 80 pixel" id="imagem">
+   
+   </div>
+   <ul>
+     <li><a href="home">HOME</a></li>
+     <li><a href="listarNoticia">NOTÍCIAS</a></li>
+     <li><a href="listarClassificado">CLASSIFICADOS</a></li>
+     <li><a href="login">ENTRAR</a></li>
+     
+     <c:if test="${usuario_logado.id != null}">
+		<c:if test="${papel_sessao == 1 || papel_sessao == 2}">
+			<li><a href="menu">REDACÃO</a></li>
+	 	</c:if>		
+	 </c:if>
+   </ul>
+ </div>
+
+<body>
+	<div id="pagina">
+		<h3>Bem-vindo(a) ${usuario_logado.nome} </h3>
+		<a href="menu">Menu</a>		
+			<c:forEach var="n" items="${noticias}">
+							
+				<td><h2>${n.titulo}</h2></td>
+				<td>${n.subtitulo}</td><br />
+				<td>${n.texto}</td><br />
+				
+				<c:if test="${usuario_logado.id != null}">
+					<td><a href="inserirComentarioFormulario?id=${n.id}">COMENTAR</a></td>
+  					<br />
+					<c:if test="${papel_sessao == 1 || papel_sessao == 2}">
+						<td><a href="alterarNoticiaFormulario?id=${n.id}">ALTERAR</a></td>
+						<td><a href="apagarNoticia?id=${n.id}">APAGAR</a></td><br />
+						<br />
+					</c:if>
+				</c:if>
+				
+			</c:forEach>
+		
+	</div>
 </body>
 </html>
 

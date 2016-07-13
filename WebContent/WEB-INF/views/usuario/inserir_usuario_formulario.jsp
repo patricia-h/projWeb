@@ -6,29 +6,48 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="./resources/css/style.css"/>
 <title>Inserir Usuario</title>
 </head>
 <body>
-	
-	<form action="inserirUsuario" method="post" enctype="multipart/form-data">
-		Nome: <input type="text" name="nome" />
-		<form:errors path="usuario.nome" /> 
-		E-mail: <input type="text" name="email" /> <br />
-		
-		<select name="papeis">
-			<c:forEach var="p" items="${papeis}">
-				<option value="${p.id}">${p.papel}</option>
-			</c:forEach>
-		</select>
-		
-	
-		Senha: <input type="password" name="senha" /> <br />
-		Login: <input type="text" name="login" /> <br />
-		Imagem: <input type="file" name="imagem" /> <br />
-		<input type="submit" value="ENVIAR" />
-		<br />
-		
-	</form>
+	<div id="imagem">
+		<img src="./resources/imagens/capa.png" width="330" height="120" 
+		alt="logo de 220 por 80 pixel">
+   
+   </div>
 
+	<div id="menu">
+	
+		<ul class="menu">
+     		<li><a href="home">HOME</a></li>
+	     	<li><a href="listarNoticia">NOTÍCIAS</a></li>
+		    <li><a href="listarClassificado">CLASSIFICADOS</a></li>
+		    <li><a href="login">ENTRAR</a></li>
+
+   		</ul>
+   	</div>
+	
+	<div id="form">
+		<form action="inserirUsuario" method="post" enctype="multipart/form-data">
+			Nome: <input type="text" name="nome" />
+			<form:errors path="usuario.nome" /> 
+			E-mail: <input type="text" name="email" /> <br />
+			
+			Perfil:
+			<select name="papeis">
+				<c:forEach var="p" items="${papeis}">
+					<option value="${p.id}">${p.papel}</option>
+				</c:forEach>
+			</select>
+			
+		
+			Senha: <input type="password" name="senha" /> <br />
+			Login: <input type="text" name="login" /> <br />
+			Imagem: <input type="file" name="imagem" /> <br />
+			<input type="submit" value="ENVIAR" />
+			<br />
+			
+		</form>
+	</div>
 </body>
 </html>

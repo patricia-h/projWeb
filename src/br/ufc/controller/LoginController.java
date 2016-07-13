@@ -28,6 +28,7 @@ public class LoginController {
 		if(candidato!=null){
 			if(candidato.getSenha().equals(usuario.getSenha())){
 				session.setAttribute("usuario_logado", candidato);
+				session.setAttribute("papel_sessao", candidato.getPapeis().get(0).getId());
 				return "menu";
 			}
 		}

@@ -48,7 +48,6 @@ public class NoticiaController {
 	@RequestMapping("/inserirNoticia")
 	public String inserirNoticia(Long usuario_id, @Valid Noticia noticia,
 								HttpServletRequest request, BindingResult result){
-		System.out.println("ola");
 		
 		if(result.hasFieldErrors("titulo")){
 			return "noticia/inserir_noticia_formulario";
@@ -72,7 +71,7 @@ public class NoticiaController {
 				
 		List<Noticia> noticias = this.nDAO.listar();
 		model.addAttribute("noticias", noticias);
-				
+		
 		return "noticia/listar_noticia";
 	}	
 	
@@ -97,8 +96,6 @@ public class NoticiaController {
 		Secao s = sDAO.recuperar(secao);
 		noticia.setIdAutor(u);
 		noticia.setIdSecao(s);
-		
-		//certo? -Sim.
 		
 		this.nDAO.alterar(noticia);
 		return "redirect:listarNoticia";

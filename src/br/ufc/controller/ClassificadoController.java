@@ -68,14 +68,16 @@ public class ClassificadoController {
 	
 	@RequestMapping("/alterarClassificadoFormulario")
 	public String alterarClassificadoFormulario(Long id, Model model){
-		
 		Classificado classificado = this.cDAO.recuperar(id);
 		model.addAttribute("classificado", classificado);
 		return "classificado/alterar_classificado_formulario";
 	}
 	
 	@RequestMapping("/alterarClassificado")
-	public String alterarClassificado(Classificado classificado){
+	public String alterarClassificado(Classificado classificado, Long usuario){
+		
+		Usuario u = uDAO.recuperar(usuario);
+		classificado.setAutor(u);
 		
 		this.cDAO.alterar(classificado);
 		return "redirect:listarClassificado";

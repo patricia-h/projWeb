@@ -62,7 +62,7 @@ public class Noticia {
 		this.subtitulo = subtitulo;
 	}
 	public String getTexto() {
-		return texto;
+		return texto; 
 	}
 	public void setTexto(String texto) {
 		this.texto = texto;
@@ -86,6 +86,14 @@ public class Noticia {
 		this.idSecao = idSecao;
 	}
 	
+	
+	
+	public List<Comentario> getComentarios() {
+		return comentarios;
+	}
+	public void setComentarios(List<Comentario> comentarios) {
+		this.comentarios = comentarios;
+	}
 	@Override
 	public boolean equals(Object obj) {
 		if(!(obj instanceof Noticia))

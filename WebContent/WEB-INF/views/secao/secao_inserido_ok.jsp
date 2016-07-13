@@ -7,7 +7,7 @@
 <title>Seção Inserida</title>
 </head>
 <body>
-	<h2><a href="menu">HOME</a></h2>
+	<h2><a href="home">HOME</a></h2>
 	<h2>Seção inserida com sucesso.</h2>
 </body>
 </html>
